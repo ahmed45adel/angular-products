@@ -1,0 +1,15 @@
+<div class="card vstack text-center">
+    <img [src]="product.image" class="card-img-top w-100 h-75" alt="product" />
+    <div class="card-body">
+        <h5 class="card-title">{{ product.title }}</h5>
+        <h6 class="card-text"> {{product.category}} </h6>
+        <p class="card-text">{{product.description}}</p>
+        <p class="card-text"> {{product.price}} </p>
+    </div>
+    <div class="card-footer bg-white border-0">
+        <button class="btn btn-dark text-wihte" (click)="addToCartLocal(product)">Add to Cart</button>
+    </div>
+    <div class="card-footer bg-white border-0">
+        <button class="btn btn-dark text-wihte" (click)="removeItemLocal(product_id)">Remove from Cart</button>
+    </div>
+</div>

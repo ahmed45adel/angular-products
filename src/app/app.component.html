@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+    <div class="container">
+        <a class="navbar-brand" routerLinkActive="active" routerLink="/">Products</a>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link custom_nav_link" routerLinkActive="active" routerLink="/cart"> <span
+                        class="btn-danger text-center cart_count"> {{count |
+                        async}}</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" routerLink="/login">Log in</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" routerLink="/register">Register</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" routerLink="/products">Products</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container text-center">
+    <router-outlet></router-outlet>
+</div>

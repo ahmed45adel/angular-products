@@ -1,0 +1,45 @@
+<div class="container my-5">
+    <form #productForm="ngForm" (ngSubmit)="submitProductForm(productForm)">
+        <div class="mb-3">
+            <label for="emailAdress" class="form-label">Email Adress</label>
+            <input type="email" class="form-control" id="emailAdress" aria-describedby="emailAdress" name="emailAdress"
+                #emailAdress="ngModel" [(ngModel)]="productForm.emailAdress" required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+        </div>
+
+        <div *ngIf="emailAdress.touched && !emailAdress.valid">
+            <small class="text-danger" *ngIf="emailAdress.errors.required">
+                This field is required
+            </small>
+            <small class="text-danger" *ngIf="emailAdress.errors.minlength">
+                Min. Length is 3
+            </small>
+            <small class="text-danger" *ngIf="emailAdress.errors.pattern">
+                invalid email format
+            </small>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="password" class="form-label">password</label>
+            <input type="text" class="form-control" id="password" aria-describedby="password" name="password"
+                #password="ngModel" [(ngModel)]="productForm.password" required
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" />
+        </div>
+
+        <div *ngIf="password.touched && !password.valid">
+            <small class="text-danger" *ngIf="password.errors.required">
+                This field is required
+            </small>
+            <small class="text-danger" *ngIf="password.errors.minlength">
+                Min. Length is 3
+            </small>
+            <small class="text-danger" *ngIf="password.errors.pattern">
+                password length not less than 8 characters , contains at least one lowercase , one uppercase , at least
+                one digit and
+                special character
+            </small>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!productForm.valid">Submit</button>
+    </form>
+</div>

@@ -10,10 +10,14 @@ import { ProductCardComponent } from './product-card/product-card.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { CartComponent } from './cart/cart.component';
-import { HttpClientModule } from '@angular/common/http';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { StoreModule } from '@ngrx/store';
 import { reducer } from 'src/app/store/WishList/WishList.reducer';
+import { StaffOnlyComponent } from './staff-only/staff-only.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RequestInterceptor } from './request.interceptor';
+import { LoaderComponent } from './loader/loader.component';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +28,8 @@ import { reducer } from 'src/app/store/WishList/WishList.reducer';
     LoginComponent,
     CartComponent,
     WishListComponent,
+    StaffOnlyComponent,
+    LoaderComponent,
 
   ],
   imports: [
@@ -37,7 +43,13 @@ import { reducer } from 'src/app/store/WishList/WishList.reducer';
     StoreModule,
     StoreModule.forRoot({ WishList: reducer }),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: RequestInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

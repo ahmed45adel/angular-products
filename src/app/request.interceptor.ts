@@ -17,7 +17,6 @@ export class RequestInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    console.log('FORM INTERCEPTOR', request);
 
     // SHOW LOADER
     this.loaderService.setIsLoading(true);
@@ -41,7 +40,6 @@ export class RequestInterceptor implements HttpInterceptor {
         : request.headers,
       params: request.params.append('limit', '5'),
     });
-    console.log(UpdatedRequest);
 
     // REQUEST REACH TO SERVER
     return (

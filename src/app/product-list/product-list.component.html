@@ -12,11 +12,11 @@
                     </div>
                 </a>
                 <div class="col-12 button__div">
-                    <button class="btn btn-danger" (click)="addToCartLocal(product)">
+                    <button class="btn btn-light" (click)="addToCartLocal(product)">
                         Add To Cart
                     </button>
-                    <button [ngStyle]="{ color: clickedIndex.includes(i) ? 'yellow' : 'red' }" class="star"
-                        (click)="addToWishList(product, i)">
+                    <button class="btn btn-light" [ngStyle]="{ color: clickedIndex.includes(i) ? 'yellow' : 'red' }"
+                        class="star" (click)="addToWishList(product, i)">
                         &#9733;
                     </button>
                 </div>

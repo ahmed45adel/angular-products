@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductCardComponent } from './product-card/product-card.component';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
+// import { RegisterComponent } from './register/register.component';
+// import { LoginComponent } from './login/login.component';
 import { CartComponent } from './cart/cart.component';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { StoreModule } from '@ngrx/store';
@@ -17,15 +17,14 @@ import { StaffOnlyComponent } from './staff-only/staff-only.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RequestInterceptor } from './request.interceptor';
 import { LoaderComponent } from './loader/loader.component';
-
+import { LoginRegisterModuleModule } from './login-register-module/login-register-module.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
     ProductCardComponent,
-    RegisterComponent,
-    LoginComponent,
+
     CartComponent,
     WishListComponent,
     StaffOnlyComponent,
@@ -42,6 +41,8 @@ import { LoaderComponent } from './loader/loader.component';
     HttpClientModule,
     StoreModule,
     StoreModule.forRoot({ WishList: reducer }),
+    LoginRegisterModuleModule
+
   ],
   providers: [
     {

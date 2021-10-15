@@ -3,8 +3,8 @@ import { CartComponent } from './cart/cart.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login-register-module/login/login.component';
+import { RegisterComponent } from './login-register-module/register/register.component';
 import { StaffOnlyComponent } from './staff-only/staff-only.component';
 import { AuthGuardGuard } from './auth-guard.guard';
 const routes: Routes = [

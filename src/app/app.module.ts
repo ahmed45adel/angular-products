@@ -18,7 +18,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RequestInterceptor } from './request.interceptor';
 import { LoaderComponent } from './loader/loader.component';
 import { LoginRegisterModuleModule } from './login-register-module/login-register-module.module';
-
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,13 +35,11 @@ import { LoginRegisterModuleModule } from './login-register-module/login-registe
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule,
-    ReactiveFormsModule,
     ValidateEqualModule,
-    HttpClientModule,
     StoreModule,
     StoreModule.forRoot({ WishList: reducer }),
-    LoginRegisterModuleModule
+    LoginRegisterModuleModule,
+    SharedModule
 
   ],
   providers: [

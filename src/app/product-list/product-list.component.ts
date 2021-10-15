@@ -50,6 +50,5 @@ export class ProductListComponent implements OnInit {
         })
       );
     }
-    console.log(this.clickedIndex);
   }
 }

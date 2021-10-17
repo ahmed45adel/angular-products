@@ -23,6 +23,7 @@ export class ProductListComponent implements OnInit {
     this.productService.getProducts().subscribe((response) => {
       this.Products = response;
     });
+
   }
   addToCartLocal(product: any) {
     this.cartService.addToCart(product);
@@ -50,6 +51,5 @@ export class ProductListComponent implements OnInit {
         })
       );
     }
-    console.log(this.clickedIndex);
   }
 }

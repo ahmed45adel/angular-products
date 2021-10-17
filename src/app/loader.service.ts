@@ -8,8 +8,6 @@ export class LoaderService {
 
   private isLoadingBehaviour = new BehaviorSubject(false)
 
-  // isLoading = this.isLoadingBehaviour.asObservable();
-
   constructor() { }
 
   getIsLoading() {

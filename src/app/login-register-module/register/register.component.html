@@ -70,18 +70,23 @@
             </small>
         </div>
         <!-- confirm password input -->
-        <label for="confirmPassword" class="form-label" ngValidateEqual="confirmPassword">Confirm Password</label>
-        <input type="text" class="form-control" id="confirmPassword" name="confirmPassword"
-            formControlName="confirmPassword" ngValidateEqual="password">
+        <label for="confirmPassword" class="form-label">Confirm Password</label>
+        <input class="form-control" id="confirmPassword" name="confirmPassword" formControlName="confirmPassword"
+            ngValidateEqual="password" type="password">
+
+
+
         <div *ngIf="
                         productFormControls.confirmPassword.touched &&
-                        !productFormControls.confirmPassword.valid
+                        productFormControls.confirmPassword.valid
                     ">
             <small class="text-danger" *ngIf="productFormControls.confirmPassword.errors.required">
                 This field is required
             </small>
 
+
         </div>
+
         <div formArrayName="addresses">
             <div *ngFor="let address of addressesList.controls; let i = index">
                 <div [formGroupName]="i">
@@ -126,4 +131,5 @@
         </div>
         <button type=" submit" class="btn btn-primary" [disabled]="!productForm.valid">Register</button>
     </form>
+    <h5 class="pt-5">Already have an account ? <a href="/login" class="ps-3">Login</a></h5>
 </div>

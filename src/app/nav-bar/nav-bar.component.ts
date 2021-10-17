@@ -1,4 +1,3 @@
-import { CardDetailsService } from './../card-details.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-  wishListCounter: number;
-  constructor(private wishListService: CardDetailsService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.wishListService.currentWishListCount.subscribe(value => this.wishListCounter = value)
   }
 }

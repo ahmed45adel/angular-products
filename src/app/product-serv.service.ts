@@ -5,14 +5,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProductServService {
-  private url = 'https://fakestoreapi.com/products';
 
   constructor(private httpClient: HttpClient) { }
 
   getProducts() {
-    return this.httpClient.get(this.url);
+    return this.httpClient.get('https://fakestoreapi.com/products')
   }
   getProduct(id: any) {
-    return this.httpClient.get(`${this.url}/${id}`);
+    return this.httpClient.get(`https://fakestoreapi.com/products/${id}`)
   }
 }

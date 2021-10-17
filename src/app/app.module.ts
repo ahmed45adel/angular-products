@@ -21,19 +21,16 @@ import { RouterModule } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
     ProductCardComponent,
-
     CartComponent,
     WishListComponent,
     StaffOnlyComponent,
     LoaderComponent,
     EgpPipe,
-
   ],
   imports: [
     BrowserModule,
